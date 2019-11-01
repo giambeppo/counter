@@ -4,6 +4,8 @@ public interface CounterService {
 
     void create(String counterName);
 
+    void delete(String counterName);
+
     long get(String counterName);
 
     long increment(String counterName);

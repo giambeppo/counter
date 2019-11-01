@@ -26,6 +26,13 @@ public class InMemoryCounterService implements CounterService {
     }
 
     @Override
+    public void delete(String counterName) {
+        if (counters.remove(counterName) == null) {
+            throw new MissingCounterException(counterName);
+        }
+    }
+
+    @Override
     public long get(String counterName) {
         return getCounter(counterName).get();
     }
